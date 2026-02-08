@@ -14,11 +14,24 @@ const Hero = () => {
           Backend Developer
         </p>
         <h1 className="mb-6 text-5xl font-black tracking-tight sm:text-7xl md:text-8xl">
-          <span className="gradient-text">Your Name</span>
+          <span className="gradient-text">Sundesh Batheja</span>
         </h1>
         <p className="mx-auto max-w-lg text-base leading-relaxed text-muted-foreground">
-          Building reliable backend systems — scalable APIs, solid databases, and production-ready cloud infrastructure.
+          Building reliable backend systems — scalable APIs, solid databases,
+          and production-ready cloud infrastructure.
         </p>
+
+        {/* Open to and Location */}
+        <div className="mt-6 space-y-2 flex flex-col items-center">
+          <div className="flex items-center gap-2 text-sm font-bold text-muted-foreground">
+            <span className="h-2 w-2 rounded-full bg-primary shadow-sm shadow-primary/40" />
+            Location: Karachi, Pakistan · Remote-Friendly
+          </div>
+          <div className="flex items-center gap-2 text-sm font-bold text-muted-foreground">
+            <span className="h-2 w-2 rounded-full bg-accent shadow-sm shadow-accent/40" />
+            Open to Relocation
+          </div>
+        </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a

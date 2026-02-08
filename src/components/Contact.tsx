@@ -5,7 +5,7 @@ const Contact = () => {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("you@example.com");
+    navigator.clipboard.writeText("sundesh.batheja.75@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -20,31 +20,56 @@ const Contact = () => {
 
       <div className="mt-8 glass-card p-6">
         <div className="grid gap-6 sm:grid-cols-3">
-          <a href="mailto:you@example.com" className="flex items-center gap-3 group">
+          <a
+            href="mailto:sundesh.batheja.75@gmail.com"
+            className="flex items-center gap-3 group"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <Mail className="h-4 w-4" />
             </div>
             <div>
-              <div className="text-xs font-extrabold text-muted-foreground">Email</div>
-              <div className="text-sm font-bold group-hover:text-primary transition-colors">you@example.com</div>
+              <div className="text-xs font-extrabold text-muted-foreground">
+                Email
+              </div>
+              <div className="text-sm font-bold group-hover:text-primary transition-colors">
+                sundesh.batheja.75@gmail.com
+              </div>
             </div>
           </a>
-          <a href="https://github.com/your-username" target="_blank" rel="noopener" className="flex items-center gap-3 group">
+          <a
+            href="https://github.com/SundeshBatheja"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-3 group"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-foreground/5 text-foreground">
               <Github className="h-4 w-4" />
             </div>
             <div>
-              <div className="text-xs font-extrabold text-muted-foreground">GitHub</div>
-              <div className="text-sm font-bold group-hover:text-primary transition-colors">your-username</div>
+              <div className="text-xs font-extrabold text-muted-foreground">
+                GitHub
+              </div>
+              <div className="text-sm font-bold group-hover:text-primary transition-colors">
+                SundeshBatheja
+              </div>
             </div>
           </a>
-          <a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener" className="flex items-center gap-3 group">
+          <a
+            href="https://linkedin.com/in/sundeshbatheja"
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-3 group"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
               <Linkedin className="h-4 w-4" />
             </div>
             <div>
-              <div className="text-xs font-extrabold text-muted-foreground">LinkedIn</div>
-              <div className="text-sm font-bold group-hover:text-primary transition-colors">your-handle</div>
+              <div className="text-xs font-extrabold text-muted-foreground">
+                LinkedIn
+              </div>
+              <div className="text-sm font-bold group-hover:text-primary transition-colors">
+                sundeshbatheja
+              </div>
             </div>
           </a>
         </div>
@@ -52,7 +77,11 @@ const Contact = () => {
           onClick={copyEmail}
           className="mt-5 inline-flex items-center gap-2 rounded-xl border border-border bg-secondary px-4 py-2 text-xs font-extrabold transition-all hover:bg-secondary/80"
         >
-          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+          {copied ? (
+            <Check className="h-3.5 w-3.5" />
+          ) : (
+            <Copy className="h-3.5 w-3.5" />
+          )}
           {copied ? "Copied!" : "Copy email"}
         </button>
       </div>

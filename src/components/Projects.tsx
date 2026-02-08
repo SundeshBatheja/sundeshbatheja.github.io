@@ -2,19 +2,25 @@ import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Order Service (Microservices)",
-    desc: "Spring Boot service with PostgreSQL + Redis, idempotent endpoints, and outbox pattern for reliable events.",
-    tags: ["Spring Boot", "PostgreSQL", "Redis", "Kafka"],
+    title: "Superview",
+    description:
+      "AI-driven adtech platform for influencer marketing and campaign management.",
+    tags: ["FastAPI", "PostgreSQL", "Docker", "AWS", "Vertex AI"],
+    link: "https://www.platformance.io/solutions/superview",
   },
   {
-    title: "Auth Gateway",
-    desc: "API gateway handling OAuth2/JWT, rate limiting, request validation, and centralized observability.",
-    tags: ["Node.js", "JWT", "Rate limiting", "OpenTelemetry"],
-  },
-  {
-    title: "Async Worker Platform",
-    desc: "Background jobs with retries, dead-letter queues, and dashboards for throughput and failure analysis.",
-    tags: ["Python", "RabbitMQ", "Docker", "Prometheus"],
+    title: "Performr",
+    description:
+      "Performance analytics platform for influencer campaigns with real-time insights.",
+    tags: [
+      "Express.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Temporal",
+      "Docker",
+      "AWS",
+    ],
+    link: "https://www.platformance.io/performr",
   },
 ];
 
@@ -24,29 +30,49 @@ const Projects = () => (
       <span className="h-px w-8 bg-border" />
       Projects
     </div>
-    <h2 className="mt-3 text-2xl font-black tracking-tight">Work highlights</h2>
+    <h2 className="mt-3 text-2xl font-black tracking-tight">Featured work</h2>
 
-    <div className="mt-8 grid gap-4 md:grid-cols-3">
-      {projects.map((p) => (
-        <article key={p.title} className="glass-card-hover p-5">
-          <h3 className="text-base font-bold">{p.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {p.tags.map((t) => (
-              <span key={t} className="rounded-full border border-border bg-secondary px-2.5 py-1 text-[11px] font-bold">
-                {t}
+    <div className="mt-8 grid gap-4 md:grid-cols-2">
+      {projects.map((project) => (
+        <a
+          key={project.title}
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="glass-card p-5 transition-all hover:-translate-y-1 hover:shadow-lg group"
+        >
+          <div className="flex items-start justify-between mb-3">
+            <h3 className="text-lg font-bold group-hover:text-accent transition-colors">
+              {project.title}
+            </h3>
+            <svg
+              className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 text-xs font-bold rounded-full bg-secondary border border-border text-foreground"
+              >
+                {tag}
               </span>
             ))}
           </div>
-          <div className="mt-4 flex gap-4">
-            <a href="#" className="inline-flex items-center gap-1 text-sm font-extrabold text-primary hover:underline">
-              GitHub <ExternalLink className="h-3 w-3" />
-            </a>
-            <a href="#" className="inline-flex items-center gap-1 text-sm font-extrabold text-primary hover:underline">
-              Docs <ExternalLink className="h-3 w-3" />
-            </a>
-          </div>
-        </article>
+        </a>
       ))}
     </div>
   </section>
