@@ -1,16 +1,7 @@
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Mail, Download } from "lucide-react";
 import FadeInWhenVisibile from "./FadeInWhenVisibile";
-import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const [showCounter, setShowCounter] = useState(false);
-
-  useEffect(() => {
-    if (window.location.search.includes("admin=1")) {
-      setShowCounter(true);
-    }
-  }, []);
-
   return (
     <section className="relative flex min-h-[85vh] flex-col items-center justify-center px-4 text-center">
       {/* Background glows */}
@@ -58,6 +49,16 @@ const Hero = () => {
               <Mail className="h-4 w-4" />
               Get in touch
             </a>
+            {/* Download CV Button with icon and label */}
+            <a
+              href="/cv.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/80 px-6 py-3 text-sm font-extrabold text-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+              title="Download CV"
+            >
+              <Download className="h-5 w-5" />
+              CV
+            </a>
           </div>
         </div>
       </FadeInWhenVisibile>
@@ -68,18 +69,6 @@ const Hero = () => {
       >
         <ArrowDown className="h-5 w-5" />
       </a>
-
-      {/* Visitor counter badge, visible only if ?admin=1 is in the URL */}
-      {showCounter && (
-        <div className="mt-8">
-          <a href="https://hits.seeyoufarm.com">
-            <img
-              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsundeshbatheja.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"
-              alt="visitor counter"
-            />
-          </a>
-        </div>
-      )}
     </section>
   );
 };
